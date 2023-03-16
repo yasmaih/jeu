@@ -9,6 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <script src="./script.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){
+    initGame()
+    let imgs = document.querySelectorAll('#tdBody tr td img');
+    for (i = 0; i < imgs.length;i++){
+        imgs[i].addEventListener('click',function(){
+            tourne(this);
+        });
+    }
+});
+</script>
     <title>Document</title>
 </head>
 <body>
@@ -18,12 +28,13 @@ Jeu de cartes
         </nav>
     </header>
     <div id="scoreDiv">
-        <span> Score :</span>
-        <span id="scoreNumber">
+        <span> Score :</span>’
+        <span id="scoreNumber"> 0
         </span>
     </div>
     <main>
         <div id="jeu">
+            <div id="resultat"></div>
             <table class="cartes">
                 <tbody id="tdBody"></tbody>
             <tr class="row"> 
@@ -62,8 +73,8 @@ Jeu de cartes
                     <td><img id="29" class="imgHeight" src="./images/back.jpg" alt=""></td>
                     <td><img id="30" class="imgHeight" src="./images/back.jpg" alt=""></td>
                 </tr>
-                
-                        </table></tbody>
+                </tbody>
+                        </table>
                
         </div>
         
