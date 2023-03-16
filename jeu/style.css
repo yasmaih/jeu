@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: none;
+    margin: none;
+}
+#scoreDiv{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+.imgHeight{
+height: 160px;
+width: 110px;
+padding: 5px;
+}
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+table{
+    display: flex;
+    justify-content: space-evenly;
+}
