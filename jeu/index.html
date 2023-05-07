@@ -8,17 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<script src="./script.js"></script>
-<script>document.addEventListener("DOMContentLoaded",function(){
-    initGame()
-    let imgs = document.querySelectorAll('#tdBody tr td img');
-    for (i = 0; i < imgs.length;i++){
-        imgs[i].addEventListener('click',function(){
-            tourne(this);
-        });
-    }
-});
-</script>
+<script type="text/javascript" src="script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                initGame();
+                let imgs = document.querySelectorAll('#tdBody tr td img');
+                for(i=0; i < imgs.length;i++){
+                    imgs[i].addEventListener('click',function(){
+                        tourne(this);
+                    });
+                }
+            });
+        </script>
     <title>Document</title>
 </head>
 <body>
@@ -27,16 +28,29 @@
 Jeu de cartes 
         </nav>
     </header>
-    <div id="scoreDiv">
-        <span> Score :</span>’
-        <span id="scoreNumber"> 0
-        </span>
-    </div>
+ 
     <main>
         <div id="jeu">
-            <div id="resultat"></div>
-            <table class="cartes">
-                <tbody id="tdBody"></tbody>
+            <div id="scoreDiv">
+                <span> Score :</span>
+                <span id="scoreNumber"> 
+                </span>
+            </div>
+            <div id="resultat" class="resultat">
+                <p>Partie terminée.</p>
+                <p>Votre résultat est <span id="score2"></span></p>
+                <p id="errorMessage" class="errorMessage"></p>
+                <form name="formulaire" id="formulaire" action="ajouterScore.php" method="POST">
+                    <input name="monNom" id="monNom" type="text" value="" placeholder="saisissez votre nom">
+                    <input name="monScore" id="monScore" type="hidden" value="10">
+                </form>
+                <p>
+                    <button onclick="rejouer()">REJOUER UNE PARTIE</button>
+                    <button href="scores.php" onclick="setScore()">ENREGISTRER MON SCORE</button>
+                </p>
+            </div>
+            <table id="jeuCartes" class="cartes">
+                <tbody id="tdBody">
             <tr class="row"> 
                   <td><img id="1" class="imgHeight" src="./images/back.jpg" alt=""></td>
                     <td><img id="2" class="imgHeight" src="./images/back.jpg" alt=""></td>
